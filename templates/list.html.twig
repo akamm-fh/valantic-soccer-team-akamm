@@ -1,0 +1,22 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <a href="{{ path('home') }}">Zurück zur Homepage</a>
+
+    <h1>Alle Teams:</h1>
+
+    <ul>
+        {% for team in teams %}
+            <li>
+                <h2>{{ team.name }}</h2>
+                {% if team.logo is defined and team.logo %}
+                    <img src="{{ team.logo.getFullPath() }}" alt="{{ team.name }}" width="100">
+                {% endif %}
+                <p>Anzahl der Spieler: {{team.players|length}}</p>
+                <a href="{{ path('team_detail', {'slug': team.getKey()}) }}">Details ansehen</a>
+            </li>
+        {% else %}
+            <p>Keine Teams gefunden.</p>
+        {% endfor %}
+    </ul>
+{% endblock %}

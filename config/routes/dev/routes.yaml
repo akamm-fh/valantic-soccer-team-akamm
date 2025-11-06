@@ -1,0 +1,14 @@
+_pimcore_dev:
+    resource: "@PimcoreCoreBundle/config/routing_dev.yaml"
+
+teams:
+  path: /teams/
+  controller: App\Controller\TeamController::listAction
+
+team_detail:
+  path: /teams/{slug}
+  controller: App\Controller\TeamController::detailAction
+
+home:
+  path: /
+  controller: App\Controller\DefaultController::defaultAction

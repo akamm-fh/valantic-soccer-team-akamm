@@ -1,0 +1,32 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+
+    <h1>Team: {{team.name}}</h1>
+    {% if team.logo is defined and team.logo %}
+        <img src="{{ team.logo.getFullPath() }}" alt="{{ team.name }}" width="100">
+    {% endif %}
+    <div id="infos">
+        <p>Trainer: {{team.trainer}}</p>
+        <p>Gründungsjahr: {{team.year}}</p>
+        <p>Standort: {{team.location}}</p>
+        <p>Beschreibung: {{team.description}}</p>
+        <p>Liga: {{team.league}}</p>
+        <p>Spieler:</p>
+
+        <ul id="players">
+            {% for player in team.players %}
+                <li>
+                    <h2>{{ player.firstname }} {{ player.lastname }}</h2>
+                    <p>Nummer: {{ player.number}}</p>
+                    <p>Alter: {{ player.age}}</p>
+                    <p>Position: {{ player.position}}</p>
+                </li>
+            {% else %}
+                <p>Keine Spieler in diesem Team.</p>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <a href="{{ path('teams') }}">Zurück zur Liste</a>
+{% endblock %}

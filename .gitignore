@@ -1,6 +1,5 @@
 # remove the following ignores for your project
-/config/pimcore/constants.php
-/config/pimcore
+/config/pimcore/
 
 # symfony default
 /.web-server-pid
@@ -31,7 +30,7 @@
 /var/config/reports.php
 
 
-/public/var/tmp
+/public/var/
 /public/sitemap*.xml
 
 # PHP-CS-Fixer

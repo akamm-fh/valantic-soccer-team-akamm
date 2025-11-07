@@ -1,6 +1,6 @@
 # remove the following ignores for your project
 /config/pimcore/constants.php
-/config/pimcore/google-api-private-key.json
+/config/pimcore
 
 # symfony default
 /.web-server-pid
